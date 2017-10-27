@@ -1,3 +1,7 @@
+notebook/.py
+Untitled.txt
+.ipynb_checkpoints/
+.idea
 *sh
 *pyc
 /data
