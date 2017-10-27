@@ -169,7 +169,7 @@ def write_vocab(vocab, filename):
                 f.write("{}\n".format(word))
             else:
                 f.write(word)
-    print("- done. {} tokens".format(len(vocab)))
+    print("- done. {} tokens into {}".format(len(vocab), filename))
 
 
 def load_vocab(filename):
