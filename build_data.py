@@ -24,10 +24,17 @@ def main():
     processing_word = get_processing_word(lowercase=True)
 
     # Generators
+    delimiter_ = '\t'
+    dev = CoNLLDataset(config.filename_dev, delimiter_, processing_word)
+    test = CoNLLDataset(config.filename_test, delimiter_, processing_word)
+    train = CoNLLDataset(config.filename_train, delimiter_, processing_word)
+
+    '''
     dev   = CoNLLDataset(config.filename_dev, processing_word)
     test  = CoNLLDataset(config.filename_test, processing_word)
     train = CoNLLDataset(config.filename_train, processing_word)
-
+    '''
+    
     # Build Word and Tag vocab
     vocab_words, vocab_tags = get_vocabs([train, dev, test])
     vocab_glove = get_glove_vocab(config.filename_glove)

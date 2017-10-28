@@ -40,7 +40,7 @@ class CoNLLDataset(object):
         ```
 
     """
-    def __init__(self, filename, processing_word=None, processing_tag=None,
+    def __init__(self, filename, delimiter=' ', processing_word=None, processing_tag=None,
                  max_iter=None):
         """
         Args:
@@ -54,6 +54,7 @@ class CoNLLDataset(object):
         self.processing_word = processing_word
         self.processing_tag = processing_tag
         self.max_iter = max_iter
+        self.delimiter = delimiter
         self.length = None
 
 
@@ -71,7 +72,7 @@ class CoNLLDataset(object):
                         yield words, tags
                         words, tags = [], []
                 else:
-                    ls = line.split(' ')
+                    ls = line.split(self.delimiter)
                     word, tag = ls[0],ls[-1]
                     if self.processing_word is not None:
                         word = self.processing_word(word)
