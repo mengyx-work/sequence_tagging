@@ -81,6 +81,7 @@ class Config():
 
     #filename_dev = filename_test = filename_train = "data/test.txt" # test
     data_common = '/Users/matt.meng/dev/Stanford_CS224n_2017_assignments/assignment3/data'
+    data_common = '/home/matt.meng/data/conll_data'
     filename_dev = os.path.join(data_common, 'dev.conll')
     filename_test = os.path.join(data_common, 'test.masked')
     filename_train = os.path.join(data_common, 'train.conll')
