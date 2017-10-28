@@ -34,7 +34,7 @@ def main():
     test  = CoNLLDataset(config.filename_test, processing_word)
     train = CoNLLDataset(config.filename_train, processing_word)
     '''
-    
+
     # Build Word and Tag vocab
     vocab_words, vocab_tags = get_vocabs([train, dev, test])
     vocab_glove = get_glove_vocab(config.filename_glove)

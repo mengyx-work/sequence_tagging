@@ -13,9 +13,10 @@ def main():
     # model.restore_session("tmp/model.weights/") # optional, restore weights
 
     # create datasets
-    dev   = CoNLLDataset(config.filename_dev, config.processing_word,
+    delimiter_ = '\t'
+    dev   = CoNLLDataset(config.filename_dev, delimiter_, config.processing_word,
                          config.processing_tag, config.max_iter)
-    train = CoNLLDataset(config.filename_train, config.processing_word,
+    train = CoNLLDataset(config.filename_train, delimiter_, config.processing_word,
                          config.processing_tag, config.max_iter)
 
     # train model
