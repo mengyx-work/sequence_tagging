@@ -1,5 +1,5 @@
 import os
-
+import tensorflow as tf
 
 from .general_utils import get_logger
 from .data_utils import get_trimmed_glove_vectors, load_vocab, \
@@ -53,6 +53,10 @@ class Config():
         # 3. get pre-trained embeddings
         self.embeddings = (get_trimmed_glove_vectors(self.filename_trimmed)
                 if self.use_pretrained else None)
+
+        # 4. configure the session
+        self.sess_config = tf.ConfigProto(log_device_placement=False)
+        os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 
     # general config
